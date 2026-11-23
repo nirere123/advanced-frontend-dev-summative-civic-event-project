@@ -1,0 +1,4 @@
+:focus-visible { outline: 3px solid #c8962e; outline-offset: 2px; }
+.sk { background: linear-gradient(90deg, #eee, #f8f8f8, #eee); animation: pulse 1.2s infinite; }
+@keyframes pulse { 50% { opacity: .5; } }
+@media (prefers-reduced-motion: reduce) { .sk { animation: none; } }
