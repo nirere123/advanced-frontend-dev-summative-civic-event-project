@@ -1,1 +1,0 @@
-# advanced-frontend-dev-summative-civic-event-project
