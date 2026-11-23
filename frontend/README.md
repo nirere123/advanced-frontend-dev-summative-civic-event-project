@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # CivicEvents – Frontend
 Accessible city events & services portal. Built with **HTML, Tailwind CSS (CDN) and jQuery** only.
 Purple / black / gold / white theme. All frontend code lives in this `frontend/` folder.
@@ -44,3 +45,6 @@ API endpoint paths are in the `EP` object at the top of `js/core.js` – adjust 
 Token + `{id, full_name, role}` are stored in `sessionStorage` by default, or `localStorage` when
 "Remember me" is ticked (persistent, but more exposed on shared devices). Sent as `Authorization: Bearer <token>`.
 A 401 response signs the user out and redirects to login.
+=======
+# UI Implementation
+>>>>>>> af1ebb4895a56c7da409ab864f5a3ee3c0f37833
