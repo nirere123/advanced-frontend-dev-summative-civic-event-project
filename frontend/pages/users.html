@@ -1,17 +1,63 @@
 <!DOCTYPE html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Users · CivicEvents</title><link rel="icon" href="../assets/logo.svg">
-<script src="https://cdn.tailwindcss.com"></script><script src="../js/tailwind-config.js"></script>
-<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script><link rel="stylesheet" href="../css/styles.css">
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="CivicEvents — accessible city events, announcements and promos.">
+  <title>Users · CivicEvents</title>
+  <link rel="icon" href="../assets/logo.svg">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="../js/tailwind-config.js"></script>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <link rel="stylesheet" href="../css/styles.css">
 </head>
-<body class="bg-white text-ink min-h-screen flex flex-col">
-<a href="#main" class="sr-only focus:not-sr-only bg-gold p-2">Skip to content</a>
-<header class="bg-ink text-white"><nav class="max-w-6xl mx-auto flex flex-wrap items-center gap-3 p-3" aria-label="Main">
-<a href="../index.html" class="flex items-center gap-2 font-bold text-gold text-xl"><img src="../assets/logo.svg" alt="" class="h-8 w-8">CivicEvents</a>
-<form id="gs" role="search" class="flex-1 min-w-[140px]"><label for="q" class="sr-only">Search events</label><input id="q" class="w-full rounded px-2 py-1 text-ink" placeholder="Search events..."></form>
-<div id="nav" class="flex flex-wrap items-center gap-3 text-sm"></div></nav></header>
-<div id="toast" role="status" aria-live="polite" class="fixed top-4 right-4 z-50 space-y-2"></div>
-<main id="main" class="max-w-6xl mx-auto w-full flex-1 p-4" tabindex="-1"></main>
-<footer class="bg-brand text-white text-sm p-4 text-center">Help &amp; contact: support@civicevents.example · © 2026 CivicEvents · Accessible city events &amp; services</footer>
-<script src="../js/config.js"></script><script src="../js/core.js"></script><script src="../js/admin.js"></script>
-<script>$(function () { boot({auth:1,admin:1}, users); });</script></body></html>
+<body class="bg-slate-50 text-ink min-h-screen flex flex-col">
+  <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-[60] rounded bg-gold px-4 py-2 font-semibold text-ink">Skip to main content</a>
+
+  <header class="sticky top-0 z-30 bg-ink text-white shadow-lg">
+    <div class="max-w-7xl mx-auto flex flex-wrap items-center gap-x-4 gap-y-2 px-4 py-3">
+      <a href="../index.html" class="flex items-center gap-2 text-xl font-bold text-gold">
+        <img src="../assets/logo.svg" alt="" class="h-8 w-8">CivicEvents</a>
+      <form id="globalSearch" role="search" class="order-last w-full md:order-none md:w-auto md:flex-1 md:max-w-sm">
+        <label for="globalQ" class="sr-only">Search events, announcements and promos</label>
+        <div class="relative">
+          <input id="globalQ" type="search" placeholder="Search events, announcements, promos…"
+            class="w-full rounded-full border-0 bg-white/10 py-2 pl-10 pr-4 text-white placeholder-gray-300 focus:bg-white focus:text-ink focus:placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-gold">
+          <span class="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2" aria-hidden="true">🔍</span>
+        </div>
+      </form>
+      <button id="menuBtn" type="button" class="ml-auto rounded-md px-3 py-2 hover:bg-white/10 md:hidden" aria-controls="nav" aria-expanded="false">☰ Menu</button>
+      <nav id="nav" aria-label="Main" class="hidden w-full flex-col gap-1 md:ml-auto md:flex md:w-auto md:flex-row md:items-center"></nav>
+    </div>
+  </header>
+
+  <div id="toasts" class="fixed right-4 top-20 z-[60] space-y-2" aria-live="polite"></div>
+
+  <main id="main" tabindex="-1" class="mx-auto w-full max-w-7xl flex-1 px-4 py-8 focus:outline-none"></main>
+
+  <footer class="mt-12 bg-ink text-gray-300">
+    <div class="mx-auto grid max-w-7xl gap-8 px-4 py-10 sm:grid-cols-2 lg:grid-cols-4">
+      <div><p class="flex items-center gap-2 text-lg font-bold text-gold"><img src="../assets/logo.svg" alt="" class="h-6 w-6">CivicEvents</p>
+        <p class="mt-2 text-sm">Accessible city events &amp; services portal.</p></div>
+      <div><h2 class="font-semibold text-white">Explore</h2>
+        <ul class="mt-2 space-y-1 text-sm">
+          <li><a class="hover:text-gold underline-offset-2 hover:underline" href="../pages/events.html">Events</a></li>
+          <li><a class="hover:text-gold underline-offset-2 hover:underline" href="../pages/announcements.html">Announcements</a></li>
+          <li><a class="hover:text-gold underline-offset-2 hover:underline" href="../pages/promos.html">Promos</a></li></ul></div>
+      <div><h2 class="font-semibold text-white">Help &amp; contact</h2>
+        <ul class="mt-2 space-y-1 text-sm"><li>Email: support@civicevents.example</li><li>Phone: +1 (555) 010-2030</li><li>Mon–Fri, 8:00–17:00</li></ul></div>
+      <div><h2 class="font-semibold text-white">Accessibility</h2>
+        <p class="mt-2 text-sm">Keyboard friendly, screen-reader labelled, captions on every promo. Need content in another format? Contact us.</p></div>
+    </div>
+    <p class="border-t border-white/10 py-4 text-center text-xs">© 2026 CivicEvents · Built with HTML, Tailwind CSS &amp; jQuery</p>
+  </footer>
+
+  <script src="../js/config.js"></script>
+  <script src="../js/api.js"></script>
+  <script src="../js/permissions.js"></script>
+  <script src="../js/core.js"></script>
+  <script src="../js/admin.js"></script>
+  <!-- ROLE GUARD for this page: ADMIN ONLY -->
+  <script>$(function () { boot({ auth: 1, admin: 1 }, users); });</script>
+</body>
+</html>
