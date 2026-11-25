@@ -3,6 +3,8 @@
 Accessible, responsive frontend for the **CivicEvents+** city events & services portal.
 Built with **HTML, Tailwind CSS (CDN) and jQuery only** — no build step.
 
+[Watch the CivicEvents demo video](https://youtu.be/OZ95K7QPz5I).
+
 ---
 
 ## 1. Quick start

@@ -2,6 +2,8 @@
 
 Accessible city events & services portal.
 
+[Watch the CivicEvents demo video](https://youtu.be/OZ95K7QPz5I).
+
 | Folder | Contents |
 |--------|----------|
 | [`backend/`](backend/README.md) | Provided Node.js + Express + PostgreSQL API (port 4000) |

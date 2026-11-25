@@ -3,6 +3,8 @@
 This repository contains the **backend API** for the CivicEvents+ Project  — a Node.js + Express application powered by PostgreSQL.  
 It provides endpoints for managing **events, promos, registrations, and notifications**, with full CRUD and authentication support.
 
+[Watch the CivicEvents demo video](https://youtu.be/OZ95K7QPz5I).
+
 
 ## Features
 
